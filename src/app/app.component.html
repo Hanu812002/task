@@ -1,0 +1,17 @@
+<div>
+  <input type="file" (change)="onFileSelected($event)">
+  <button (click)="convertAndDisplayScreenplay()" [disabled]="!selectedFile">Convert & Display Screenplay</button>
+</div>
+
+<div *ngIf="selectedFile">
+  <p>Selected File: {{ selectedFile.name }}</p>
+  <p>File Size: {{ selectedFile.size }} bytes</p>
+  <p>File Type: {{ selectedFile.type }}</p>
+</div>
+
+<div *ngIf="convertedScreenplay">
+  <!-- <h2>fcgvhbjnkm</h2> -->
+  <quill-editor [readOnly]="true" [ngModel]="convertedScreenplay"></quill-editor>
+</div>
+
+<button *ngIf="convertedScreenplay" (click)="downloadScreenplay()">Download Screenplay</button>
