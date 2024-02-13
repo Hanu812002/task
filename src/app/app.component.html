@@ -9,9 +9,11 @@
   <p>File Type: {{ selectedFile.type }}</p>
 </div>
 
-<div *ngIf="convertedScreenplay">
-  <!-- <h2>fcgvhbjnkm</h2> -->
-  <quill-editor [readOnly]="true" [ngModel]="convertedScreenplay"></quill-editor>
-</div>
+<!-- <div *ngIf="convertedScreenplay">
+   <h2>fcgvhbjnkm</h2> -->
+  <!-- <quill-editor [readOnly]="true" [ngModel]="convertedScreenplay"></quill-editor>
+</div> -->
 
-<button *ngIf="convertedScreenplay" (click)="downloadScreenplay()">Download Screenplay</button>
+<button *ngIf="convertedScreenplay" (click)="downloadScript('fdx')">Download Screenplay</button>
+<button *ngIf="convertedScreenplay" (click)="downloadScript('txt')">Download Screenplay</button>
+
